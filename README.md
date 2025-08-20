@@ -1,58 +1,56 @@
-Este é um sistema bancário completo e robusto desenvolvido em Python, com funcionalidades de conta corrente, operações de depósito e saque, transferências entre usuários, e um sistema de cartão de crédito integrado com parcelamento e cálculo de juros.
+# 🏦 Sistema Bancário em Python
 
-O projeto utiliza um arquivo JSON (usuarios.json) como um banco de dados simples para armazenar informações de usuários e transações, e arquivos de texto (.txt e .csv) para registrar e exportar históricos.
+Este é um **sistema bancário completo e robusto** desenvolvido em **Python**, com funcionalidades de **conta corrente**, **operações financeiras** (depósito, saque, transferências), além de um **sistema de cartão de crédito integrado** com parcelamento e cálculo de juros.
 
-Funcionalidades
-O sistema oferece uma ampla gama de recursos para o gerenciamento de contas bancárias e de cartão de crédito:
+O projeto utiliza:
+- Um arquivo **JSON (`usuarios.json`)** como banco de dados simples para armazenar informações de usuários e transações.  
+- Arquivos de texto **(.txt)** e **.csv** para registrar e exportar históricos de movimentações.
 
-Funcionalidades de Conta Corrente
-Login e Cadastro: Os usuários podem criar uma nova conta ou fazer login em uma conta existente.
+---
 
-Segurança: O sistema inclui um recurso de recuperação de senha via pergunta secreta.
+## ⚙️ Funcionalidades
 
-Consulta de Saldo: Permite ao usuário verificar o saldo atual da sua conta a qualquer momento.
+### 📌 Conta Corrente
+- **Login e Cadastro** de usuários.  
+- **Recuperação de Senha** via pergunta secreta.  
+- **Consulta de Saldo** em tempo real.  
+- **Depósitos** com base em notas reais (R$2, R$5, R$10, R$20, R$50, R$100, R$200).  
+- **Saques** com validação de saldo suficiente.  
+- **Transferências** entre contas do sistema.  
+- **Histórico de Transações** com opção de exportar para `.txt` ou `.csv`.
 
-Depósito: Funcionalidade de depósito com base em notas de dinheiro (R$2, R$5, R$10, R$20, R$50, R$100, R$200).
+### 💳 Cartão de Crédito
+- **Geração Automática** de cartão para novos usuários (número, CVV e validade únicos).  
+- **Limite de Crédito** inicial aleatório, com possibilidade de aumento automático baseado em movimentação.  
+- **Compras e Parcelamento** em até 12 vezes (ou mais, com juros).  
+- **Cálculo de Juros**:  
+  - Juros proporcionais ao número de parcelas.  
+  - Juros diários para faturas em atraso.  
+  - Juros majorados (3x) em caso de negativação.  
+- **Negativação** automática caso o limite seja excedido.  
+- **Pagamento de Fatura** (total ou parcial).  
+- **Quitação de Dívida** com 10% de desconto (inclui parcelas futuras).
 
-Saque: Permite realizar saques da conta, com validação de saldo suficiente.
+### 🛠️ Administração
+- **Painel Administrativo** protegido por senha (`admin_password`).  
+- **Visualização Completa** de dados de todos os usuários (saldo, cartão, status, histórico).  
+- **Reset do Banco de Dados** (apagar todos os registros e recomeçar do zero).
 
-Transferência: Usuários podem transferir fundos para outras contas no sistema.
+---
 
-Histórico de Transações: Visualização e exportação do histórico de todas as transações da conta.
+## 📂 Estrutura do Projeto
+- `main.py` → Arquivo principal com toda a lógica do sistema.  
+- `usuarios.json` → Banco de dados com informações de usuários.  
+- `[nome_do_usuario]_historico.txt` → Histórico de transações legível.  
+- `[nome_do_usuario]_historico_[periodo].csv` → Histórico exportado em formato CSV.  
 
-Funcionalidades de Cartão de Crédito
-Geração Automática: Um cartão de crédito virtual é gerado automaticamente para cada novo usuário, com número, CVV e data de vencimento únicos.
+---
 
-Limite de Crédito: O limite inicial do cartão é gerado aleatoriamente e pode ser aumentado automaticamente com base na movimentação da conta (depósitos e transferências).
+## 🚀 Tecnologias Utilizadas
+- **Linguagem:** Python  
+- **Banco de Dados:** JSON  
+- **Exportação de dados:** TXT e CSV  
 
-Compras e Parcelamento: Possibilidade de realizar compras com o cartão e parcelar em até 12 vezes (ou mais, com juros).
+---
 
-Cálculo de Juros:
-
-Juros de parcelamento baseados no número de parcelas.
-
-Juros diários para faturas em atraso.
-
-Juros majorados (3x o normal) em caso de negativação.
-
-Negativação: O sistema marca o cartão como "negativado" se a fatura atual exceder o limite de crédito disponível, aplicando juros mais altos.
-
-Pagamento de Fatura: Permite o pagamento total ou parcial da fatura do cartão.
-
-Quitação de Dívida: Oferece a opção de quitar a dívida total (incluindo parcelas futuras) com um desconto de 10%.
-
-Funcionalidades de Administração
-Painel Administrativo: Acesso exclusivo para o administrador com senha (admin_password).
-
-Visualização de Dados: O administrador pode ver todos os dados de todos os clientes, incluindo saldo, informações do cartão de crédito, status de negativação e histórico de parcelas.
-
-Reset do Banco de Dados: Funcionalidade para apagar completamente todos os dados de usuários e transações do sistema.
-
-Estrutura do Código
-main.py: O arquivo principal que contém toda a lógica do sistema.
-
-usuarios.json: Arquivo JSON que atua como o banco de dados principal, armazenando os dados de cada usuário.
-
-[nome_do_usuario]_historico.txt: Um arquivo de texto para cada usuário, registrando o histórico de transações de forma legível.
-
-[nome_do_usuario]_historico_[periodo].csv: Arquivo CSV gerado ao exportar o histórico de transações, facilitando a análise externa.
+✍️ Autor: Marco Gizoni.
