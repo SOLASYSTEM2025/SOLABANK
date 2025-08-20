@@ -56,16 +56,3 @@ usuarios.json: Arquivo JSON que atua como o banco de dados principal, armazenand
 [nome_do_usuario]_historico.txt: Um arquivo de texto para cada usuário, registrando o histórico de transações de forma legível.
 
 [nome_do_usuario]_historico_[periodo].csv: Arquivo CSV gerado ao exportar o histórico de transações, facilitando a análise externa.
-
-Como Executar
-Clone ou baixe este repositório.
-
-Certifique-se de ter o Python 3 instalado.
-
-Execute o arquivo main.py no terminal:
-
-Bash
-
-python main.py
-
-Siga as instruções na tela para criar uma conta, fazer login ou acessar o painel administrativo.
