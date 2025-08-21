@@ -1,59 +1,93 @@
-# 🏦 Sistema Bancário em Python
+# 🏦 SOLABANK
 
-Este é um **sistema bancário completo e robusto** desenvolvido em **Python**, com funcionalidades de **conta corrente**, **operações financeiras** (depósito, saque, transferências), além de um **sistema de cartão de crédito integrado** com parcelamento e cálculo de juros.
+Um sistema bancário avançado em **Python** que simula operações financeiras reais de forma interativa, incluindo:
 
-O projeto utiliza:
-- Um arquivo **JSON (`usuarios.json`)** como banco de dados simples para armazenar informações de usuários e transações.  
-- Arquivos de texto **(.txt)** e **.csv** para registrar e exportar históricos de movimentações.
-
----
-
-## ⚙️ Funcionalidades
-
-### 📌 Conta Corrente
-- **Login e Cadastro** de usuários.  
-- **Recuperação de Senha** via pergunta secreta.  
-- **Consulta de Saldo** em tempo real.  
-- **Depósitos** com base em notas reais (R$2, R$5, R$10, R$20, R$50, R$100, R$200).  
-- **Saques** com validação de saldo suficiente.  
-- **Transferências** entre contas do sistema.  
-- **Histórico de Transações** com opção de exportar para `.txt` ou `.csv`.
-
-### 💳 Cartão de Crédito
-- **Geração Automática** de cartão para novos usuários (número, CVV e validade únicos).  
-- **Limite de Crédito** inicial aleatório, com possibilidade de aumento automático baseado em movimentação.  
-- **Compras e Parcelamento** em até 12 vezes (ou mais, com juros).  
-- **Cálculo de Juros**:  
-  - Juros proporcionais ao número de parcelas.  
-  - Juros diários para faturas em atraso.  
-  - Juros majorados (3x) em caso de negativação.  
-- **Negativação** automática caso o limite seja excedido.  
-- **Pagamento de Fatura** (total ou parcial).  
-- **Quitação de Dívida** com 10% de desconto (inclui parcelas futuras).
-
-### 🛠️ Administração
-- **Painel Administrativo** protegido por senha (`admin_password`).  
-- **Visualização Completa** de dados de todos os usuários (saldo, cartão, status, histórico).  
-- **Reset do Banco de Dados** (apagar todos os registros e recomeçar do zero).
+- 👤 **Gerenciamento de Usuários**  
+- 💳 **Cartões de Crédito (compras, faturas e PDF)**  
+- 📈 **Investimentos (simulação de rendimentos e resgates)**  
+- 💵 **Empréstimos (solicitação, juros e pagamentos)**  
+- 🔧 **Painel Administrativo (estatísticas e relatórios em CSV/PDF)**  
+- 📝 **Auditoria (logs de ações)**  
 
 ---
 
-## 📂 Estrutura do Projeto
-- `main.py` → Arquivo principal com toda a lógica do sistema.  
-- `usuarios.json` → Banco de dados com informações de usuários.  
-- `[nome_do_usuario]_historico.txt` → Histórico de transações legível.  
-- `[nome_do_usuario]_historico_[periodo].csv` → Histórico exportado em formato CSV.  
+## 🚀 Funcionalidades
+
+### 👥 Usuários
+- Cadastro e login com senha e pergunta secreta 🔑  
+- Depósitos, saques e transferências 💰  
+- Histórico de transações com exportação 📄  
+
+### 💳 Cartões de Crédito
+- Solicitar até **5 cartões por usuário**  
+- Compras à vista ou parceladas (até 24x com juros progressivos) 🛒  
+- Sistema de **pontos de recompensa** ⭐ (troca por saldo)  
+- Geração de **faturas em PDF** 🧾  
+
+### 📈 Investimentos
+- Opções: **Poupança, CDB, Tesouro Direto, Ações e Bitcoin**  
+- Simulação de **rendimentos compostos** 📊  
+- Resgates com depósito direto na conta 💸  
+
+### 💵 Empréstimos
+- Solicitação baseada no saldo do usuário (até 5x)  
+- Juros de **2% ao mês** 📉  
+- Pagamento de parcelas ou quitação total ✅  
+
+### 🔧 Administração
+- Login administrativo 🔐  
+- Estatísticas gerais (saldo total, usuários, transações, etc.)  
+- Relatórios exportáveis em **CSV e PDF** 📑  
+
+### 📝 Auditoria
+- Registro detalhado de todas as operações  
+- Histórico limitado aos últimos **1000 registros**  
 
 ---
 
-## 🚀 Tecnologias Utilizadas
-- **Linguagem:** Python  
-- **Banco de Dados:** JSON  
-- **Exportação de dados:** TXT e CSV  
+## 🛠️ Tecnologias Utilizadas
+- 🐍 **Python 3.9+**  
+- 📂 **JSON** para armazenamento de dados persistentes  
+- 📄 **ReportLab** para geração de relatórios em PDF  
+- 📊 **CSV** para exportação de planilhas  
 
 ---
 
-[Assista à demonstração no LinkedIn](https://www.linkedin.com/posts/marco-gizoni-811b61300_projeto-solabank-simula%C3%A7%C3%A3o-de-um-caixa-activity-7364128109719166976-06EH?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAE0OtU0Bv2b9M4stuaQKF1SCE6XUmm9vL4M)
+## 📦 Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/solabank.git
+   cd solabank
+Instale as dependências:
+
+bash
+Copiar
+Editar
+pip install reportlab
+Execute o sistema:
+
+bash
+Copiar
+Editar
+python main.py
+
+---
+
+🎮 Como Usar
+Ao iniciar o sistema, você pode escolher:
+
+Login para acessar sua conta
+
+Cadastrar para criar um novo usuário
+
+Painel Administrativo para acessar estatísticas e relatórios
+
+---
+
+⚖️ Licença
+Este projeto foi desenvolvido para fins de estudo e simulação.
+Você pode modificá-lo e adaptá-lo conforme necessário.
 
 ---
 
