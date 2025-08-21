@@ -53,4 +53,8 @@ O projeto utiliza:
 
 ---
 
+[Assista à demonstração no LinkedIn](https://www.linkedin.com/posts/marco-gizoni-811b61300_projeto-solabank-simula%C3%A7%C3%A3o-de-um-caixa-activity-7364128109719166976-06EH?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAE0OtU0Bv2b9M4stuaQKF1SCE6XUmm9vL4M)
+
+---
+
 ✍️ Autor: Marco Gizoni.
