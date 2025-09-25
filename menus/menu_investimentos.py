@@ -1,3 +1,6 @@
+from utils.helpers import limpar_tela, pausar
+
+
 def menu_investimentos(usuario, investimento_manager, usuario_manager, auditoria):
     """
     📈 MENU DE INVESTIMENTOS

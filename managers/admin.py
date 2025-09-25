@@ -1,3 +1,13 @@
+import csv
+import datetime
+from pydoc import pager
+
+from matplotlib import colors
+from matplotlib.table import Table
+from networkx import star_graph
+from utils.helpers import pausar
+
+
 class AdminManager:
     """
     🔧 GERENCIADOR ADMINISTRATIVO
@@ -143,19 +153,19 @@ class AdminManager:
         nome_arquivo = f"relatorio_sistema_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
         
         try:
-            doc = SimpleDocTemplate(nome_arquivo, pagesize=letter)
-            styles = getSampleStyleSheet()
+            doc = SimpleDocTemplate(nome_arquivo, pagesize=letter) # pyright: ignore[reportUndefinedVariable]
+            styles = getSampleStyleSheet() # type: ignore
             story = []
             
             # Título
-            titulo = Paragraph("RELATÓRIO ADMINISTRATIVO DO SISTEMA BANCÁRIO", styles['Title'])
+            titulo = star_graph("RELATÓRIO ADMINISTRATIVO DO SISTEMA BANCÁRIO", styles['Title'])
             story.append(titulo)
-            story.append(Spacer(1, 12))
+            story.append(pager(1, 12))
             
             # Data do relatório
-            data_relatorio = Paragraph(f"Data: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}", styles['Normal'])
+            data_relatorio = star_graph(f"Data: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}", styles['Normal'])
             story.append(data_relatorio)
-            story.append(Spacer(1, 20))
+            story.append(pager(1, 20))
             
             # Estatísticas gerais
             if usuarios:
@@ -172,9 +182,9 @@ class AdminManager:
                 Média de saldo por usuário: R$ {saldo_total/total_usuarios:.2f}<br/>
                 """
                 
-                stats_para = Paragraph(estatisticas, styles['Normal'])
+                stats_para = star_graph(estatisticas, styles['Normal'])
                 story.append(stats_para)
-                story.append(Spacer(1, 20))
+                story.append(pager(1, 20))
                 
                 # Tabela com dados dos usuários
                 dados_tabela = [['Usuário', 'Saldo', 'Pontos', 'Transações']]
@@ -188,7 +198,7 @@ class AdminManager:
                     ])
                 
                 tabela = Table(dados_tabela)
-                tabela.setStyle(TableStyle([
+                tabela.setStyle(TableStyle([ # type: ignore
                     ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
                     ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
                     ('ALIGN', (0, 0), (-1, -1), 'CENTER'),

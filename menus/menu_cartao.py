@@ -1,3 +1,6 @@
+from utils.helpers import limpar_tela, pausar
+
+
 def menu_cartao(usuario, cartao_manager, usuario_manager, auditoria):
     """
     💳 MENU DE CARTÕES DE CRÉDITO
@@ -57,7 +60,7 @@ def menu_cartao(usuario, cartao_manager, usuario_manager, auditoria):
             
             # Se escolheu "Trocar pontos por saldo"
             elif opcao_num == len(cartoes) + 2:
-                trocar_pontos_por_saldo(usuario, usuario_manager, auditoria)
+                trocar_pontos_por_saldo(usuario, usuario_manager, auditoria) # type: ignore
             
             # Se escolheu "Voltar"
             elif opcao_num == len(cartoes) + 3:

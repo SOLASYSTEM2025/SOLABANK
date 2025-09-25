@@ -1,3 +1,6 @@
+from utils.helpers import limpar_tela, pausar
+
+
 def pagamento_boletos(usuario, usuario_manager, auditoria):
     """
     🧾 PAGAMENTO DE BOLETOS

@@ -1,3 +1,7 @@
+import datetime
+import json
+import os
+
 class AuditoriaManager:
     """
     📝 GERENCIADOR DE AUDITORIA

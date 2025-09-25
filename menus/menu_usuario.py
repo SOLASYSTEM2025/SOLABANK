@@ -1,3 +1,8 @@
+from menus import menu_cartao, menu_emprestimos, menu_investimentos
+from menus.menu_boletos import pagamento_boletos
+from utils.helpers import limpar_tela, pausar
+
+
 def menu_usuario(usuario, usuario_manager, cartao_manager, investimento_manager, emprestimo_manager, auditoria):
     """
     👤 MENU DO USUÁRIO LOGADO

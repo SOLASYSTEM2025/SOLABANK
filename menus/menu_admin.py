@@ -1,3 +1,7 @@
+from json.tool import main
+from utils.helpers import limpar_tela, pausar
+
+
 def menu_admin(admin_manager, usuario_manager, auditoria):
     """
     🔧 MENU ADMINISTRATIVO

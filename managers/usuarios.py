@@ -1,3 +1,9 @@
+import datetime
+import json
+import os
+
+from utils.helpers import pausar
+
 class UsuarioManager:
     """
     👥 GERENCIADOR DE USUÁRIOS

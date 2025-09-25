@@ -1,3 +1,14 @@
+import datetime
+import json
+import os
+from pydoc import pager
+
+from matplotlib import colors
+from matplotlib.table import Table
+from networkx import star_graph
+
+from utils.helpers import gerar_numero_cartao, pausar
+
 class CartaoManager:
     """
     💳 GERENCIADOR DE CARTÕES DE CRÉDITO
@@ -166,7 +177,7 @@ class CartaoManager:
         
         # Cria as parcelas
         for i in range(parcelas):
-            data_vencimento = datetime.now() + timedelta(days=30 * i)  # 30 dias entre parcelas
+            data_vencimento = datetime.now() + datetime.timedelta(days=30 * i)  # 30 dias entre parcelas
             parcela = {
                 "numero": i + 1,
                 "valor": valor_final / parcelas,
@@ -218,7 +229,7 @@ class CartaoManager:
             return
         
         print(f"💰 Valor total da fatura: R$ {cartao['fatura_atual']:.2f}")
-        print(f"📅 Data de vencimento: {(datetime.now() + timedelta(days=10)).strftime('%d/%m/%Y')}")
+        print(f"📅 Data de vencimento: {(datetime.now() + datetime.timedelta(days=10)).strftime('%d/%m/%Y')}")
         
         print("\n📋 Itens da fatura:")
         for parcela in cartao["parcelas"]:
@@ -317,27 +328,27 @@ class CartaoManager:
         
         try:
             # Cria o documento PDF
-            doc = SimpleDocTemplate(nome_arquivo, pagesize=letter)
-            styles = getSampleStyleSheet()
+            doc = SimpleDocTemplate(nome_arquivo, pagesize=letter) # type: ignore
+            styles = getSampleStyleSheet() # type: ignore
             story = []
             
             # Título
-            titulo = Paragraph("FATURA DO CARTÃO DE CRÉDITO", styles['Title'])
+            titulo = star_graph("FATURA DO CARTÃO DE CRÉDITO", styles['Title'])
             story.append(titulo)
-            story.append(Spacer(1, 12))
+            story.append(pager(1, 12))
             
             # Informações do cartão
             info_cartao = f"""
             <b>Número do Cartão:</b> {numero_cartao}<br/>
             <b>Titular:</b> {usuario}<br/>
             <b>Data da Fatura:</b> {datetime.now().strftime('%d/%m/%Y')}<br/>
-            <b>Vencimento:</b> {(datetime.now() + timedelta(days=10)).strftime('%d/%m/%Y')}<br/>
+            <b>Vencimento:</b> {(datetime.now() + datetime.timedelta(days=10)).strftime('%d/%m/%Y')}<br/>
             <b>Valor Total:</b> R$ {cartao['fatura_atual']:.2f}
             """
             
-            info_para = Paragraph(info_cartao, styles['Normal'])
+            info_para = star_graph(info_cartao, styles['Normal'])
             story.append(info_para)
-            story.append(Spacer(1, 20))
+            story.append(pager(1, 20))
             
             # Tabela com os itens da fatura
             dados_tabela = [['Descrição', 'Parcela', 'Valor']]
@@ -352,7 +363,7 @@ class CartaoManager:
             
             if len(dados_tabela) > 1:  # Se tem itens além do cabeçalho
                 tabela = Table(dados_tabela)
-                tabela.setStyle(TableStyle([
+                tabela.setStyle(TableStyle([ # type: ignore
                     ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
                     ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
                     ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
