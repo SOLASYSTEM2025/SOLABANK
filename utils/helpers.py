@@ -1,3 +1,6 @@
+import os
+import random
+
 def limpar_tela():
     """
     🧹 LIMPAR TELA
