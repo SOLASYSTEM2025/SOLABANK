@@ -1,0 +1,20 @@
+{
+  "Marco Gizoni": {
+    "senha": "3590",
+    "pergunta_secreta": "Qual seu time do coração?",
+    "resposta_secreta": "Palmeiras",
+    "saldo": 0.0,
+    "pontos": 0,
+    "historico": [],
+    "data_cadastro": "2025-09-25T17:54:02.690879"
+  },
+  "Chico Buarque": {
+    "senha": "Cálice",
+    "pergunta_secreta": "Qual o nome do seu primeiro cachorro?",
+    "resposta_secreta": "Neymar",
+    "saldo": 0.0,
+    "pontos": 0,
+    "historico": [],
+    "data_cadastro": "2025-09-25T17:56:04.914685"
+  }
+}

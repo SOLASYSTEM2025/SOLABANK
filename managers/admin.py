@@ -1,5 +1,5 @@
 import csv
-import datetime
+from datetime import datetime
 from pydoc import pager
 
 from matplotlib import colors
