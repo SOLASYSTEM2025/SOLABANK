@@ -1,7 +1,3 @@
-# ============================================================================
-# FUNÇÕES UTILITÁRIAS
-# ============================================================================
-
 def limpar_tela():
     """
     🧹 LIMPAR TELA
@@ -11,6 +7,7 @@ def limpar_tela():
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
 def pausar():
     """
     ⏸️ PAUSAR EXECUÇÃO
@@ -19,6 +16,7 @@ def pausar():
     É útil para dar tempo do usuário ler as mensagens antes de continuar.
     """
     input("\nPressione Enter para continuar...")
+
 
 def validar_cpf(cpf):
     """
@@ -30,6 +28,7 @@ def validar_cpf(cpf):
     cpf = cpf.replace(".", "").replace("-", "")  # Remove pontos e traços
     return len(cpf) == 11 and cpf.isdigit()     # Verifica se tem 11 dígitos
 
+
 def formatar_moeda(valor):
     """
     💰 FORMATAR MOEDA
@@ -39,6 +38,7 @@ def formatar_moeda(valor):
     """
     return f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
+
 def gerar_numero_cartao():
     """
     💳 GERAR NÚMERO DE CARTÃO
@@ -47,3 +47,7 @@ def gerar_numero_cartao():
     Começa com 4000 (padrão Visa) e adiciona 12 dígitos aleatórios.
     """
     return "4000" + "".join([str(random.randint(0, 9)) for _ in range(12)])
+
+# ============================================================================
+# CLASSE GERENCIADOR DE USUÁRIOS
+# ============================================================================
