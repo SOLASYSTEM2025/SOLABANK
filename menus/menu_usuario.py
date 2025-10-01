@@ -2,7 +2,7 @@ from .menu_cartao import menu_cartao
 from .menu_emprestimos import menu_emprestimos
 from .menu_investimentos import menu_investimentos
 from .menu_boletos import pagamento_boletos
-from .utils.helpers import limpar_tela, pausar # type: ignore
+from utils.helpers import limpar_tela, pausar
 
 
 def menu_usuario(usuario, usuario_manager, cartao_manager, investimento_manager, emprestimo_manager, auditoria):
