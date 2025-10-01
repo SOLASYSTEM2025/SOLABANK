@@ -12,5 +12,26 @@
     "acao": "LOGOUT",
     "detalhes": "Logout realizado",
     "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2025-09-25T18:46:39.376959",
+    "usuario": "Marco Gizoni",
+    "acao": "LOGIN",
+    "detalhes": "Login realizado com sucesso",
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2025-09-25T18:46:45.945340",
+    "usuario": "Marco Gizoni",
+    "acao": "DEPOSITO",
+    "detalhes": "Depósito de R$ 7380.00",
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2025-09-25T18:47:00.117074",
+    "usuario": "Marco Gizoni",
+    "acao": "TRANSFERENCIA",
+    "detalhes": "Transferência de R$ 1200.00 para Chico Buarque",
+    "ip": "127.0.0.1"
   }
 ]

@@ -3,18 +3,23 @@
     "senha": "3590",
     "pergunta_secreta": "Qual seu time do coração?",
     "resposta_secreta": "Palmeiras",
-    "saldo": 0.0,
+    "saldo": 6180.0,
     "pontos": 0,
-    "historico": [],
+    "historico": [
+      "[25/09/2025 18:46:45] DEPÓSITO: +R$ 7380.00",
+      "[25/09/2025 18:47:00] TRANSFERÊNCIA ENVIADA para Chico Buarque: -R$ 1200.00"
+    ],
     "data_cadastro": "2025-09-25T17:54:02.690879"
   },
   "Chico Buarque": {
     "senha": "Cálice",
     "pergunta_secreta": "Qual o nome do seu primeiro cachorro?",
     "resposta_secreta": "Neymar",
-    "saldo": 0.0,
+    "saldo": 1200.0,
     "pontos": 0,
-    "historico": [],
+    "historico": [
+      "[25/09/2025 18:47:00] TRANSFERÊNCIA RECEBIDA de Marco Gizoni: +R$ 1200.00"
+    ],
     "data_cadastro": "2025-09-25T17:56:04.914685"
   }
 }

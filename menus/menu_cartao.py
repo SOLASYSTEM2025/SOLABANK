@@ -1,5 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from utils.helpers import limpar_tela, pausar
-
 
 def menu_cartao(usuario, cartao_manager, usuario_manager, auditoria):
     """
